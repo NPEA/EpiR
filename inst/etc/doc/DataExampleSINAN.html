@@ -1,0 +1,1139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;"><head>
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>Exemplo do Sistema de Notificação Obrigatória</title><link href="conf/style.css" rel="stylesheet" type="text/css"></head>
+<body style="direction: ltr;">
+
+
+
+
+<table style="text-align: left; width: 100%; font-family: Arial;" border="0" cellpadding="2" cellspacing="4">
+
+
+
+
+  <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+      <td>
+      
+      
+      
+      
+      <h2 style="color: rgb(0, 0, 153);"><img style="width: 48px; height: 48px;" alt="" src="images/EpiR_icon.png">&nbsp;Exemplo do Sistema de Notificação Obrigatória</h2>
+
+
+
+
+      
+      
+      
+      
+      <hr style="width: 100%; height: 2px;"></td>
+
+
+
+
+    </tr>
+
+
+
+
+    <tr>
+
+
+
+
+      <td>
+
+      
+      <p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 11pt; line-height: 150%; color: black;" lang="PT-BR">O&nbsp;Sistema de Informações
+de Agravos de Notificação (SINAN) tem por objetivo o registro e processamento
+dos dados sobre agravos de notificação em todo o território nacional,
+fornecendo informações para análise do perfil da morbidade e contribuindo desta
+forma, para a tomada de decisões em nível municipal, estadual e federal.<o:p></o:p></span></p>
+
+
+      <span style="font-size: 11pt; color: black;" lang="PT-BR">Para esse exemplo foi
+utilizado o banco de notificação obrigatória de tuberculose. Considerou-se os registros
+das capitais da região centro-oeste do Brasil (Campo Grande, Cuiabá e Goiânia)
+e do Distrito Federal (Brasília). Além disso, foram utilizados todos os casos
+notificados entre 2000 e 2006, obtendo o total de 8.531 registros.<br>
+
+      <br>
+
+      </span><span style="font-size: 11pt; color: black;" lang="PT-BR">No entanto, devido ao
+grande número de variáveis do banco, apenas algumas foram selecionadas. A
+descrição dessas variáveis e o respectivo dicionário de dados é apresentado
+abaixo.<br>
+
+      <br>
+
+      </span>
+
+      
+      <table style="border: medium none black; border-collapse: collapse;" class="MsoTableGrid" border="1" cellpadding="0" cellspacing="0">
+
+
+ <tbody>
+
+          <tr style="">
+
+
+  <td colspan="2" style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 432.2pt;" valign="top" width="576">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Tabela C1. Dicionário de variáveis
+  do banco exemplo do SINAN*<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" valign="top" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><b style=""><span style="font-size: 10pt;" lang="PT-BR">Nome da variável<o:p></o:p></span></b></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><b style=""><span style="font-size: 10pt;" lang="PT-BR">Descrição<o:p></o:p></span></b></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" valign="top" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">dt.notific<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Data de notificação: data de
+  preenchimento da ficha de notificação<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" valign="top" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">dt.diag<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style=""><span style="font-size: 10pt; color: black;" lang="PT-BR">Data em que
+  foi realizado o diagnóstico do caso notificado.<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" valign="top" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">id.municip<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style=""><span style="font-size: 10pt; color: black;" lang="PT-BR">Código do
+  município onde está localizada a unidade de saúde (ou outra fonte
+  notificadora) que realizou a notificação, segundo a classificação do IBGE.<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">dt.nasc<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Data de nascimento do paciente.<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">nu.idade<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Idade do
+  paciente por ocasião da data do diagnóstico. <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">OBS: quando
+  não há data de nascimento a idade deve ser digitada segundo informação
+  fornecida pelo paciente como aquela referida por ocasião da data do
+  diagnóstico e se o paciente não souber informar sua idade, anotar a idade
+  aparente.<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">A
+  composição da variável obedece o seguinte critério: 4º dígito: <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">ANOS (A),
+  MESES (M), DIAS (D) <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Ex. 09 M &#8211;
+  nove meses, 18 A &#8211; dezoito anos<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">cs.sexo<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">Sexo do paciente:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">M:
+  Masculino<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">F: Feminino<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">I: Ignorado<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">cs.raca<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Considera-se
+  na seleção das categorias a cor ou raça declarada pela pessoa:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Branca <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Preta <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Amarela
+  ( pessoa que se declarou de raça amarela) <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">4: Parda
+  (pessoa que se declarou mulata, cabocla, cafuza, mameluca ou mestiça de preto
+  com pessoa de outra cor ou raça) <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">5: Indígena
+  (pessoa que se declarou indígena ou índia) <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">9: Ignorado<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">cs.escolar<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Anos de
+  estudo concluídos. A classificação é obtida em função da série e do grau que
+  a pessoa está freqüentando ou freqüentou considerando a última série
+  concluída com aprovação. A correspondência é feita de forma que cada série
+  concluída com aprovação corresponde a um ano de estudo:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Nenhum<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: De 1 a 3
+  anos <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: De 4 a 7
+  anos<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">4: De 8 a
+  11 anos<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">5: 12 anos
+  ou mais<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">6: Não se
+  aplica <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">9: Ignorado<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">sg.uf.not<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style=""><span style="font-size: 10pt; color: black;" lang="PT-BR">Sigla da Unidade
+  da Federação que notificou o caso.<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">id.mn.resi<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Código do
+  município de residência do caso notificado, segundo classificação do IBGE.<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Serão exibidos somente
+  os Municípios pertencentes à UF selecionada no campo anterior.</span><span style="font-size: 10pt;" lang="PT-BR"><o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">tratamento<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Preencher com o código
+  correspondente a situação de entrada do paciente na Unidade de Saúde.<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Caso
+  Novo <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Recidiva
+  <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3:
+  Reingresso após-abandono <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">4: Não Sabe
+  <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">5: Transferência</span><span style="font-size: 10pt;" lang="PT-BR"><o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">forma<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Forma clínica da
+  tuberculose, por ocasião da notificação, segundo a sua localização:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Pulmonar<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Extrapulmonar
+  <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Pulmonar
+  + Extrapulmonar<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">agravos.as<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Informar se existem
+  agravos associados á tuberculose por ocasião da notificação:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: AIDS <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2:
+  Alcoolismo <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Diabetes
+  <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">4: Doença
+  Mental <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">5: Outros <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">9: Ignorado</span><span style="font-size: 10pt;" lang="PT-BR"><o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">hiv<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Resultado da sorologia
+  para o vírus da imunodeficiência adquirida (HIV):<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Positivo<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Negativo
+  <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Em
+  andamento <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">4: Não realizado</span><span style="font-size: 10pt;" lang="PT-BR"><o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">bacilosc.e<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Resultado da
+  baciloscopia de escarro para BAAR (Bacilo álcool-ácido resistentes) realizada
+  em amostra para diagnóstico:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Positiva<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Negativa<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Não realizada</span><span style="font-size: 10pt;" lang="PT-BR"><o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">bacilosc.2<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Resultado da
+  baciloscopia de escarro para BAAR (Bacilo alcóol-resistentes) realizada em
+  amostra colhida ao final do 2º mês de tratamento:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Positiva<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Negativa<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Não realizada</span><span style="font-size: 10pt;" lang="PT-BR"><o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">bacilosc.4<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Resultado
+  da baciloscopia de escarro para BAAR (Bacilo alcóol-resistentes) realizada em
+  amostra colhida ao final do 4º mês de tratamento:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Positiva<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Negativa<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Não
+  realizada<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">bacilosc.6<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Resultado das
+  baciloscopias de escarro para BAAR (Bacilo Alcóol-Resistentes) realizadas em
+  amostras colhidas no 6º mês de tratamento:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Positiva<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Negativa<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Não realizada</span><span style="font-size: 10pt;" lang="PT-BR"><o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">situacao.9<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Resultado de
+  tratamento com esquema com duração de 6 meses:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Cura <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Abandono
+  <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Óbito <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">4:
+  Transferência <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">5: Mudança
+  de diagnóstico <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">6: Mudança
+  de esquema por intolerância medic./ toxicidade <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">7: Continua
+  em tratamento <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">8: Falência</span><span style="font-size: 10pt;" lang="PT-BR"><o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">situacao.1<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Resultado de
+  tratamento com esquema com duração de 9 meses:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Cura <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Abandono
+  <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Óbito <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">4:
+  Transferência <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">5: Mudança
+  de diagnóstico <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">6: Mudança
+  de esquema por intolerância medic./ toxicidade <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">7: Continua
+  em tratamento <o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">situacao.2<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">Situação de
+  encerramento de todos os casos notificados.:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">1: Cura <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">2: Abandono
+  <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">3: Óbito <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">4:
+  Transferência <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">5: Mudança
+  de Diagnóstico <o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt; color: black;" lang="PT-BR">6:
+  TB-Multirresistente <o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td colspan="2" style="border: medium none ; padding: 0in 5.4pt; width: 432.2pt;" width="576">
+  
+            
+            <p class="MsoNormal" style=""><span style="font-size: 10pt;" lang="PT-BR">*Fonte: Dicionário de
+  dados &#8211; SINAN Windows<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+        
+        </tbody>
+      
+      </table>
+
+
+      <br><br>Para abrir essa base de dados no Epi-R, utilize a função "Abrir dados", que está disponível em:&nbsp;<a href="MenuFile.html">Arquivo</a> <img style="width: 28px; height: 15px;" alt="" src="images/arrow.png"> <a href="OpenData.html">Abrir dados</a>. O caminho para acessá-la é '<span style="font-style: italic;">C:\Epi-R\Exemplos\exemplo_SINAN.rda</span>'. <br><br>Ao abrir esse arquivo, o objeto de dados <span style="font-weight: bold;">banco_sinan</span>, deverá aparecer no campo "Objetos" da janela principal do Epi-R.<br><br><br><hr style="width: 100%; height: 2px;"><div style="text-align: center;"><a href="Examples.html">Voltar</a> &nbsp; &nbsp;| &nbsp; &nbsp; <a href="EpiR.html">Página inicial</a></div><br>
+
+      </td>
+
+
+
+
+    </tr>
+
+
+
+
+    
+    
+
+
+    
+
+
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+<br style="font-family: Arial;">
+
+
+
+
+
+<br style="font-family: Arial;">
+
+
+
+
+
+
+
+
+
+
+</body></html>

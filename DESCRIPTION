@@ -1,0 +1,11 @@
+Package: EpiR
+Version: 2.0.1
+Date: 2021-09-28
+Author: Equipe de Desenvolvimento do Epi-R <epi-r@ims.uerj.br>
+Maintainer: Washington Junger <wjunger@ims.uerj.br>
+Depends: R (>= 2.14.0)
+Title: Epi-R
+Description: Epi-R é uma bilioteca de funcoes e interface grafica para analise de dados epidemiologicos. 
+License: GPL versao 2 ou maior
+URL: https://github.com/wjunger/EpiR
+

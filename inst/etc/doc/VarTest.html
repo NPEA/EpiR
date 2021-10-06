@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;"><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Teste para variância</title>
+
+<link href="conf/style.css" rel="stylesheet" type="text/css"></head>
+<body style="direction: ltr;">
+<table style="text-align: left; width: 100%; font-family: Arial;" border="0" cellpadding="2" cellspacing="4">
+<tbody>
+<tr>
+<td>
+<h2 style="color: rgb(0, 0, 153);"><img style="width: 48px; height: 48px;" alt="" src="images/EpiR_icon.png"> Teste
+para variância</h2>
+<hr style="width: 100%; height: 2px;"></td>
+</tr>
+<tr>
+<td><span style="font-size: 11pt;"></span>
+<div style="text-align: center;">
+<div style="text-align: left;"><span style="font-size: 11pt;"></span>O
+caminho para essa função <span style="font-size: 11pt;"> é:
+Análises <img style="width: 28px; height: 15px;" alt="" src="images/arrow.png"> Testes de hipóteses </span><span style="font-size: 11pt;"><img style="width: 28px; height: 15px;" alt="" src="images/arrow.png"> Teste para variância</span><br>
+<span style="font-size: 11pt;"></span></div>
+<span style="font-size: 11pt;"><br>
+</span><img style="width: 382px; height: 370px;" alt="" src="images/VarTest.png"><br>
+<small>Figura 1. Janela
+"Teste para Variância".</small><br>
+<span style="font-size: 11pt;"></span></div>
+</td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Arial;">
+<div style="text-align: left; font-family: Arial;">&nbsp;Para a construção
+de um teste de hipóteses para a variância, siga os seguintes passos:<br>
+<br>
+1.
+Selecione o tipo de teste que deseja realizar. Use o teste "F" se
+deseja comparar a variância de duas amostras oriundas de populações com
+distribuição Normal.<br>
+<br>
+Caso
+queira testar a homogeniedade das variâncias, isto é, testar se as
+variâncias de cada grupo (amostra) são iguais, marque a opção
+"Bartlett".<br>
+<br>
+O teste "Fligner" tem a&nbsp;utilização muito
+parecida que o teste "Bartlett". Para maiores
+informações:&nbsp;William
+J. Conover &amp; Mark E. Johnson &amp; Myrle M. Johnson (1981).
+A comparative study of tests for homogeneity of variances, with
+applications to the outer continental shelf bidding data.
+<em>Technometrics</em> <b>23</b>, 351&#8211;361. <br>
+<br>
+<span style="font-size: 12pt;">Essa
+seleção habilitará algumas opções e deixará desabilitadas aquelas que
+não serão utilizadas.<br>
+<br>
+2. </span><span style="font-size: 12pt;">Selecione&nbsp;</span>o
+banco de dados no campo "Banco de dados". Para isso, é
+necessário que o banco já tenha sido aberto&nbsp;(detalhes
+sobre como <a href="ImportData.html"><span style="text-decoration: underline;">abrir dados</span></a>
+ou <a href="ODBCConnect.html">importar dados via ODBC</a>).<br>
+<br>
+3.
+Selecione as variáveis de interesse nos campos "Variável 1" e "Variável
+2". Nesses campos, todas as variáveis com até dez valores diferentes
+serão apresentadas.<br>
+<br>
+4. Para selecionar uma parte do banco, use o campo "Filtro". Esse
+filtro deverá seguir os mesmo padrões de filtro do R.<br>
+<br>
+5.
+Determine o valor do "Parâmetro" que será testado (esta função está
+apenas habilitada para o teste "F"). O padrão do Epi-R para o teste é
+1. <br>
+<br>
+6. O "Nível de confiança" normalmente utilizado é de 95%. <br>
+<br>
+7. Determinar as hipóteses do teste. A hipótese nula sempre será de
+igualdade (ou com o valor, ou entre as variáveis). É preciso então
+determinar a hipótese alternativa, ou seja,&nbsp;<span style="font-size: 12pt;">o
+conjunto de valores complementares àquele considerado
+na primeira hipótese. <br>
+<br>
+</span><span style="font-size: 11pt;">Para realizar
+sucessivos testes usando essa janela, marque a opção
+"Manter essa janela aberta para outra operação". Com isso, o resultado
+desejado aparecerá no campo "Saída de resultados" da janela principal
+do Epi-R, mas essa janela não será fechada, evitando o retrabalho de
+acessá-la.</span><br><br><hr style="width: 100%; height: 2px;"><div style="text-align: center;"><a href="MenuAnalisys.html">Voltar</a> &nbsp; &nbsp;| &nbsp; <a href="EpiR.html">&nbsp;Página inicial</a><span style="font-size: 12pt;"></span><br></div></div>
+<br style="font-family: Arial;">
+</body></html>

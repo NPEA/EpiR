@@ -1,0 +1,876 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;"><head>
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+
+
+
+
+
+
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>Exemplo do Sistema de Informações de Mortalidade</title><link href="conf/style.css" rel="stylesheet" type="text/css"></head>
+<body style="direction: ltr;">
+
+
+
+<table style="text-align: left; font-family: Arial; width: 100%;" border="0" cellpadding="2" cellspacing="4">
+
+
+
+  <tbody>
+
+
+
+    <tr>
+
+
+
+      <td>
+      
+      
+      
+      <h2 style="color: rgb(0, 0, 153);"><img style="width: 48px; height: 48px;" alt="" src="images/EpiR_icon.png"> Exemplo do&nbsp;Sistema de Informações de Mortalidade</h2>
+
+
+
+      
+      
+      
+      <hr style="width: 100%; height: 2px;"></td>
+
+
+
+    </tr>
+
+
+
+    <tr>
+
+
+
+      <td style="text-align: left;"><span style="font-size: 11pt;" lang="PT-BR">O Sistema de Informações
+sobre Mortalidade (SIM) foi implantado pelo Ministério da Saúde em 1975 para a
+obtenção regular e a nível nacional de dados sobre mortalidade. A partir dessa
+implantação foi possível a obtenção de dados confiáveis e abrangentes sobre
+mortalidade, subsidiando ações em diversas áreas de gestão de saúde pública.<br>
+
+      <br>
+
+      </span><span style="font-size: 11pt;" lang="PT-BR">Para a
+construção do
+exemplo com essa base, foram utilizados os registros de mortalidade de
+alguns municípios do&nbsp;Rio Grande do Sul, no período
+de 2000 a 2004. Os municípios selecionados foram Canoas,
+Caxias do Sul, Porto Alegre, Rio Grande e Santa Maria. O
+critério de escolha se
+baseou no arquivo de 2000, selecionando aqueles com maiores
+números de
+registros. Ainda assim, houve uma redução no tamanho do
+banco para 10% em
+relação ao original, obtendo um arquivo final de 11.557
+registros de óbitos, e selecionou-se também apenas algumas variáveis para compor esse exemplo.</span><span style="font-size: 11pt;" lang="PT-BR"> Abaixo, o dicionário para
+essas variáveis:<br>
+
+      <br>
+
+      </span>
+
+
+
+      
+      <table style="border: medium none black; border-collapse: collapse; text-align: left;" class="MsoTableGrid" border="2" cellpadding="0" cellspacing="0">
+
+
+ <tbody>
+
+          <tr style="">
+
+
+  <td colspan="2" style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 3.45in;" valign="top" width="331">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Tabela A1. Código para identificar
+  os municípios*<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 1.45in;" valign="top" width="139">
+  
+            
+            <p style="text-align: center;" class="MsoNormal" align="center"><b style=""><span style="font-size: 10pt;" lang="PT-BR">Código<o:p></o:p></span></b></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 2in;" valign="top" width="192">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><b style=""><span style="font-size: 10pt;" lang="PT-BR">Nome<o:p></o:p></span></b></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; vertical-align: top; width: 1.45in;">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">4304606<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 2in;" valign="top" width="192">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Canoas<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 1.45in;" valign="top" width="139">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">4305108<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 2in;" valign="top" width="192">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Caxias do Sul<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 1.45in;" valign="top" width="139">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">4314902<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 2in;" valign="top" width="192">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Porto Alegre<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 1.45in;" valign="top" width="139">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">4315602<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 2in;" valign="top" width="192">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Rio Grande<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 1.45in;" valign="top" width="139">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">4316907<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 2in;" valign="top" width="192">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Santa Maria<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td colspan="2" style="border: medium none ; padding: 0in 5.4pt; width: 3.45in;" valign="top" width="331">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 9pt;" lang="PT-BR">*Fonte: Tabela de codificação do
+  IBGE<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+        
+        </tbody>
+      
+      </table>
+
+
+
+
+      <br>
+
+      <br>
+
+
+
+      
+      <table style="border: medium none black; border-collapse: collapse; width: 608px; height: 1374px;" class="MsoTableGrid" border="1" cellpadding="0" cellspacing="0">
+
+
+ <tbody>
+
+          <tr style="">
+
+
+  <td colspan="2" style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0in 5.4pt; width: 432.2pt;" valign="top" width="576">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Tabela A2. Dicionário de variáveis
+  do banco exemplo de mortalidade*<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" valign="top" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><b style=""><span style="font-size: 10pt;" lang="PT-BR">Nome da variável<o:p></o:p></span></b></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><b style=""><span style="font-size: 10pt;" lang="PT-BR">Descrição<o:p></o:p></span></b></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" valign="top" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">DTOBITO<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Data do óbito, no formato ddmmaaaa<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in;" valign="top" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">DTNASC<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Data de nascimento, no formato
+  ddmmaaaa<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in; height: 373px;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">IDADE<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt; height: 373px;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">Idade, composto de dois
+  subcampos. O primeiro, de 1 dígito, indica a unidade da idade, conforme a
+  tabela a seguir. O segundo, de dois dígitos, indica a quantidade de unidades:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">0: Idade ignorada, o
+  segundo subcampo e<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">1: Horas, o segundo
+  subcampo varia de 01 a 23<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">2: Dias, o segundo
+  subcampo varia de 01 a 29<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">3: Meses, o segundo
+  subcampo varia de 01 a 11<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">4: Anos, o segundo
+  subcampo varia de 00 a 99<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">5: Anos (mais de 100
+  anos), o segundo subcampo varia de 0 a 99. Exemplos:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">000: Idade ignorada<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">020: 20 minutos<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">103: 3 horas<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">204: 4 dias<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">305: 5 meses<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">400: menor de 1 ano,
+  mas nao se sabe o número de horas, dias ou meses<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">410: 10 anos<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">505: 105 anos<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in; height: 94px;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">SEXO<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt; height: 94px;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">Sexo, conforme a
+  tabela:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">0: Ignorado, não
+  informado<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">1: Masculino<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">2: Feminino<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in; height: 128px;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">RACACOR<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt; height: 128px;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">Raça/cor:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">1: Branca<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">2: Preta<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">3: Amarela<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">4: Parda<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">5: Indígena<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in; height: 129px;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">ESTCIV<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt; height: 129px;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">Estado civil, conforme
+  a tabela:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">1: Solteiro<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">2: Casado<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">3: Viúvo<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">4: Separado
+  judicialmente<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">9: Ignorado<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in; height: 155px;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">ESC<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt; height: 155px;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">Escolaridade, anos de
+  estudo concluídos:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">1: Nenhum<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">2: 1 a 3 anos<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">3: 4 a 7 anos<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">4: 8 a 11 anos<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">5: 12 e mais<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">9: Ignorado<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in; height: 41px;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">CODMUNRES<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt; height: 41px;" valign="top" width="341">
+            <p style="text-align: left;" class="MsoNormal"><span style="font-size: 10pt;" lang="PT-BR">Município de
+  residência, em codificação idêntica à de CODMUNOCOR, conforme tabela
+  TABMUN.<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in; height: 147px;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">LOCOCOR<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt; height: 147px;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">Local de ocorrência do
+  óbito, conforme a tabela:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">9: Ignorado<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">1: Hospital<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">2: Outro estab saúde<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">3: Domicílio<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">4: Via Pública<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">5: Outros<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in; height: 42px;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">CODMUNCOR<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt; height: 42px;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Município de ocorrência do óbito,
+  conforme codificação do IBGE. <o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in; height: 45px;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">CAUSABAS<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt; height: 45px;" valign="top" width="341">
+  
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;" lang="PT-BR">Causa básica, conforme a
+  Classificação Internacional de Doença (CID), 10ª Revisão<o:p></o:p></span></p>
+
+
+  </td>
+
+
+ </tr>
+
+
+ <tr style="">
+
+
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 2.45in; height: 124px;" width="235">
+  
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="PT-BR">CIRCOBITO<o:p></o:p></span></p>
+
+
+  </td>
+
+
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 255.8pt; height: 124px;" valign="top" width="341">
+  
+            
+            <dl>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">Indica o tipo de
+  acidente, se cabível:<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">9: Ignorado<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">1: Acidente<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">2: Suicídio<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">3: Homicídio<o:p></o:p></span></dt>
+              <dt><span style="font-size: 10pt;" lang="PT-BR">4: Outros<o:p></o:p></span></dt>
+            </dl>
+
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  
+            
+
+  </td>
+
+
+ </tr>
+
+
+        
+        </tbody>
+      
+      </table>
+
+
+
+
+      
+      <p class="MsoNormal" style="text-align: justify; margin-top: 1px; height: 31px; font-family: Arial;"><span style="font-size: 9pt;" lang="PT-BR">*Fonte: Documento de estrutura do
+banco, disponível no portal do DATASUS.</span></p>Para abrir essa base de dados no Epi-R, utilize a função "Abrir dados", que está disponível em:&nbsp;<a href="MenuFile.html">Arquivo</a> <img style="width: 28px; height: 15px;" alt="" src="images/arrow.png"> <a href="OpenData.html">Abrir dados</a>. O caminho para acessá-la é '<span style="font-style: italic;">C:\Epi-R\Exemplos\exemplo_SIM.rda</span>'. <br><br>Ao abrir esse arquivo, o objeto de dados <span style="font-weight: bold;">banco_sim</span>, deverá aparecer no campo "Objetos" da janela principal do Epi-R.<br><br><hr style="width: 100%; height: 2px;"><div style="text-align: center;"><a href="Examples.html">Voltar</a> &nbsp; &nbsp;| &nbsp; &nbsp; <a href="EpiR.html">Página inicial</a></div></td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+</body></html>

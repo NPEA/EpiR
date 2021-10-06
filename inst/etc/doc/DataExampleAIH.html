@@ -1,0 +1,1130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;"><head>
+
+
+
+
+  
+  
+  
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+
+  
+
+
+  
+  
+  
+  
+  
+  
+  <title>Exemplo do SIH/SUS - Dados de Autorização para Internação Hospitalar</title><link href="conf/style.css" rel="stylesheet" type="text/css"></head>
+<body style="direction: ltr;">
+
+
+
+
+<table style="text-align: left; width: 100%; font-family: Arial;" border="0" cellpadding="2" cellspacing="4">
+
+
+
+
+  <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+      <td>
+      
+      
+      
+      <h2 style="color: rgb(0, 0, 153);"><img style="width: 48px; height: 48px;" alt="" src="images/EpiR_icon.png"> Exemplo&nbsp;do SIH/SUS - Dados de Autorização para Internação Hospitalar</h2>
+
+
+
+
+      
+      
+      
+      <hr style="width: 100%; height: 2px;"></td>
+
+
+
+
+    </tr>
+
+
+
+
+    <tr>
+
+
+
+
+      <td style="text-align: justify;">
+      <div style="text-align: left;"><span style="font-size: 11pt;">O
+Sistema de Informações Hospitalares do SUS
+é
+gerido pelo Ministério da Saúde,
+através das Secretarias de Assistência
+à Saúde
+e das Secretarias Estaduais e Municipais de Saúde. Assim, as
+unidades
+hospitalares, tanto públicas quanto particulares, que
+são conveniadas para
+realizar procedimentos do SUS enviam as
+informações das internações
+através de
+um documento chamado Autorização de
+Internação Hospitalar (AIH). As AIH
+contêm
+informações que viabilizam calcular o pagamento
+dos serviços hospitalares
+prestados pelo SUS, informações sobre o
+hospital que efetua o atendimento, dados
+de identificação do paciente (como o
+endereço residencial), e dados sobre a causa da
+internação, codificadas de acordo com a
+Classificação Internacional de Doenças
+(CID).</span><br>
+      <span style="font-size: 11pt;"></span></div>
+      <span style="font-size: 11pt;">
+
+
+
+      <br>
+
+
+
+
+      </span>
+      <div style="text-align: left;"><span style="font-size: 11pt;">Assim,
+esse exemplo é composto pelos registros
+de AIH de Salvador (BA), entre 01/2005 a 12/2006. O tamanho dessa
+amostra foi
+de 3% do banco original, devido ao total de registros. Além disso,
+apenas algumas variáveis foram selecionadas, em vez de utilizar todo o
+banco. O banco final do exemplo
+é composto então
+por 8.310 registros e 17 variáveis, descritas abaixo.</span><br>
+      <span style="font-size: 11pt;"></span></div>
+      <span style="font-size: 11pt;">
+
+
+
+      <br>
+
+
+
+
+      </span>
+      
+      
+      
+      <table style="border: medium none black; border-collapse: collapse; width: 608px; height: 1065px;" class="MsoTableGrid" border="2" cellpadding="0" cellspacing="0">
+
+
+
+
+        <tbody>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td colspan="2" style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0cm 5.4pt; width: 432.2pt;" valign="top" width="576">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Tabela D1. Dicionário de
+variáveis do banco exemplo de AIH*<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; vertical-align: top; width: 176.4pt;">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><b style=""><span style="font-size: 10pt;">Nome da variável<o:p></o:p></span></b></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; vertical-align: top; width: 255.8pt;">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><b style=""><span style="font-size: 10pt;">Descrição<o:p></o:p></span></b></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; vertical-align: top; width: 176.4pt;">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">N_AIH<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; vertical-align: top; width: 255.8pt;">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Número da AIH<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; vertical-align: top; width: 176.4pt;">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">ANO_CMPT<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; vertical-align: top; width: 255.8pt;">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Ano de competência da
+AIH, no formato aaaa<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt;" valign="top" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">MES_CMPT<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt;" valign="top" width="341">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Mês de
+competência da AIH, no formato mm<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">MUNIC_RES<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt;" valign="top" width="341">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Município de
+residência conforme codificação do IBGE.<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">NASC<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt;" valign="top" width="341">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Data de nascimento do paciente, no
+formato aaaammdd<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">SEXO<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt;" valign="top" width="341">
+            
+            
+            
+            <dl>
+
+
+
+              <dt><span style="font-size: 10pt;">Sexo do paciente:<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">0: Ignorado</span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;"></span><span style="font-size: 10pt;">1: Masculino</span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;"></span><span style="font-size: 10pt;">3: Feminino<b> </b></span><span =""></span><span =""></span></dt>
+
+
+
+            
+            
+            
+            </dl>
+
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">VAL_SANGUE<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt;" valign="top" width="341">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Valor gasto com sangue<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="EN-US">VAL_TOT</span><span style="font-size: 10pt;"><o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt;" valign="top" width="341">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Valor total da AIH<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="EN-US">VAL_SH</span><span style="font-size: 10pt;"><o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt;" valign="top" width="341">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Valor de serviços
+hospitalares<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;" lang="EN-US">VAL_SP</span><span style="font-size: 10pt;"><o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt;" valign="top" width="341">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Valor de serviços
+profissionais<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">DIAG_PRINC<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt;" valign="top" width="341">
+            
+            
+            
+            <dl>
+
+
+
+
+              <dt><span style="font-size: 10pt;">Diagnóstico
+principal,
+segundo a CID-10 (Tabela de Classificação
+Internacional de Doenças).<o:p></o:p></span></dt>
+
+
+
+
+            
+            
+            
+            </dl>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt; height: 466px;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">NATUREZA<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt; height: 466px;" valign="top" width="341">
+            
+            
+            
+            <dl>
+
+
+
+              <dt><span style="font-size: 10pt;">Natureza da
+relação do hospital com o SUS, conforme a Tabela
+de naturezas.<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">10: </span><span style="font-size: 10pt;">Hospital próprio
+(extinto INAMPS)<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">20: </span><span style="font-size: 10pt;">Hospital contratado<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">22: </span><span style="font-size: 10pt;">Hospital contratado, optante pelo
+SIMPLES<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">30: </span><span style="font-size: 10pt;">Hospital federal<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">31: </span><span style="font-size: 10pt;">Hospital federal com verba
+própria (apresenta AIH, mas não recebe por elas)<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">40: </span><span style="font-size: 10pt;">Hospital estadual<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">41: </span><span style="font-size: 10pt;">Hospital estadual com verba
+própria (apresenta AIH, mas não recebe por elas)<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">50: </span><span style="font-size: 10pt;">Hospital municipal<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">60: </span><span style="font-size: 10pt;">Hospital filantrópico<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">61: </span><span style="font-size: 10pt;">Hospital filantrópico,
+isento de tributos e contribuições sociais<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">63: </span><span style="font-size: 10pt;">Hospital filantrópico,
+isento de Imposto de Renda e contribuição sobre o
+lucro liquido<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">70: </span><span style="font-size: 10pt;">Hospital universitário
+de ensino<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">80: </span><span style="font-size: 10pt;">Hospital de sindicato<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">90: </span><span style="font-size: 10pt;">Hospital universitário
+de pesquisa<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">91: </span><span style="font-size: 10pt;">Hospital universitário
+de pesquisa, isento de tributos e contribuições
+sociais<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">93: </span><span style="font-size: 10pt;">Hospital universitário
+de pesquisa isento de Imposto de Renda e
+contribuição sobre o lucro líquido.<o:p></o:p></span></dt>
+
+
+
+            
+            
+            
+            </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt; height: 21px;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">IDADE<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt; height: 21px;" valign="top" width="341">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Idade do paciente<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt; height: 21px;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">DIAS_PERM<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt; height: 21px;" valign="top" width="341">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Dias de Permanência do
+paciente internado<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt; height: 63px;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">MORTE<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt; height: 63px;" valign="top" width="341">
+            
+            
+            
+            <dl>
+
+
+
+              <dt><span style="font-size: 10pt;">Indica se o paciente teve
+saída com morte:<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">0: Não<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">1: Sim<o:p></o:p></span></dt>
+
+
+
+            
+            
+            
+            </dl>
+
+
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt; height: 25px;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">NUM_FILHOS<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt; height: 25px;" valign="top" width="341">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: justify;"><span style="font-size: 10pt;">Número de filhos (Obs.
+&#8211; 0 inclui casos sem informação)<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0cm 5.4pt; width: 176.4pt; height: 127px;" width="235">
+            
+            
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt;">INSTRU<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0cm 5.4pt; width: 255.8pt; height: 127px;" valign="top" width="341">
+            
+            
+            
+            <dl>
+
+
+
+              <dt><span style="font-size: 10pt;">Grau de
+instrução:<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">0:</span><span style="font-size: 10pt;"> SEM
+INFORMAÇÃO<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">1: </span><span style="font-size: 10pt;">Analfabeto<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">2: </span><span style="font-size: 10pt;">Primeiro grau<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">3:</span><span style="font-size: 10pt;"> Segundo grau<o:p></o:p></span></dt>
+
+
+
+              <dt><span style="font-size: 10pt;">4:</span><span style="font-size: 10pt;"> Terceiro grau<o:p></o:p></span></dt>
+
+
+
+            
+            
+            
+            </dl>
+
+
+
+
+
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+          <tr style="">
+
+
+
+
+            <td colspan="2" style="border: medium none ; padding: 0cm 5.4pt; width: 432.2pt; height: 20px;" width="576">
+            
+            
+            
+            <p class="MsoNormal" style=""><span style="font-size: 10pt;">*Fonte: Dicionário de
+dados das bases de saúde<o:p></o:p></span></p>
+
+
+
+
+            </td>
+
+
+
+
+          </tr>
+
+
+
+
+        
+        
+        
+        </tbody>
+      
+      
+      
+      </table><br><br>Para abrir essa base de dados no Epi-R, utilize a função "Abrir dados", que está disponível em:&nbsp;<a href="MenuFile.html">Arquivo</a> <img style="width: 28px; height: 15px;" alt="" src="images/arrow.png"> <a href="OpenData.html">Abrir dados</a>. O caminho para acessá-la é '<span style="font-style: italic;">C:\Epi-R\Exemplos\exemplo_AIH.rda</span>'. <br><br>Ao abrir esse arquivo, o objeto de dados <span style="font-weight: bold;">banco_aih</span>, deverá aparecer no campo "Objetos" da janela principal do Epi-R.<br><br><hr style="width: 100%; height: 2px;"><div style="text-align: center;"><a href="Examples.html">Voltar</a> &nbsp; &nbsp;| &nbsp; &nbsp; <a href="EpiR.html">Página inicial</a></div><br>
+
+
+
+
+      </td>
+
+
+
+
+    </tr>
+
+
+
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+<br style="font-family: Arial;">
+
+
+
+
+<br style="font-family: Arial;">
+
+
+
+
+</body></html>

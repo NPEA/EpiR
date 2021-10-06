@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;"><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Histograma</title>
+
+<link href="conf/style.css" rel="stylesheet" type="text/css"></head>
+<body style="direction: ltr;">
+<table style="text-align: left; width: 100%; font-family: Arial;" border="0" cellpadding="2" cellspacing="4">
+<tbody>
+<tr>
+<td>
+<h2 style="color: rgb(0, 0, 153);"><img style="width: 48px; height: 48px;" alt="" src="images/EpiR_icon.png"> Histograma</h2>
+<hr style="width: 100%; height: 2px;"></td>
+</tr>
+<tr>
+<td><span style="font-size: 11pt;">O
+histograma é um gráfico freqüentemente
+utilizado em análise exploratória, que ilustra a&nbsp;distribuição
+de um conjunto de dados.<br>
+<br>
+</span><span style="font-size: 11pt;">Pode
+ser utilizado também quando se tem a
+distribuição de freqüências dos dados e se deseja plotar graficamente
+essa
+distribuição. Representado por barras, que são denominadas classes de
+freqüência, o histograma pode ter intervalos iguais ou diferentes.<br>
+<br>
+</span><span style="font-size: 11pt;">Esse
+tipo de gráfico permite interpretações tanto em
+função da distribuição absoluta como da
+distribuição relativa da variável.<br>
+<br>
+O caminho para essa função é: <a href="MenuGraphics.html">Gráficos</a>&nbsp;<img style="width: 28px; height: 15px;" alt="" src="images/arrow.png"> Histograma.<br>
+<br>
+</span></td>
+</tr>
+<tr>
+<td>
+<div style="text-align: center;"><img style="width: 356px; height: 379px;" alt="" src="images/PlotsHist.png"><br>
+<small>Figura 1. Janela
+"Histograma".</small><br>
+</div>
+</td>
+</tr>
+<tr>
+<td><br>
+O primeiro passo é selecionar o banco de dados onde está
+a variável de interesse. Para isso, é
+necessário que o banco já tenha sido aberto&nbsp;(detalhes
+sobre como <a href="ImportData.html"><span style="text-decoration: underline;">abrir dados</span></a>
+ou <a href="ODBCConnect.html">importar dados via ODBC</a>).<br>
+<br>
+Em seguida, todas as variáveis&nbsp;aparecerão
+disponíveis no campo "Variáveis". Uma ou mais
+variáveis deverão ser selecionadas. Deve-se lembrar que
+só é possível construir hitogramas para
+variáveis numéricas.<br>
+<br>
+Um item opcional da janela é a variável de
+estratificação. Quando o banco de dados é
+selecionado, as variáveis identificadas como fatores
+aparecerão na guia
+"Estratificação". Se a variável de estratificação
+não estiver listada nesse campo, basta habilitar a
+opção "Mostrar todas as variáveis". É
+permitida a
+escolha de apenas
+uma variável para esse caso.&nbsp;<br>
+<br>
+Os campos seguintes são opcionais. As informações sobre cada campo
+seguem abaixo:<br>
+<br>
+<span style="font-weight: bold; text-decoration: underline;">Opções
+de títulos </span><br>
+As opções de "Título", "Subtítulo",
+"Rótulo X" e "Rótulo Y" não aparecem na janela
+automaticamente. Para preenche-las, clique primeiro em <span style="font-weight: bold;">Títulos</span>. <br>
+Os nomes dos rótulos devem se referir à variável
+selecionada e ao tipo de frequência utilizada na gráfico.<br>
+<br>
+<span style="font-weight: bold; text-decoration: underline;">Opções
+de gráfico</span><br>
+Número de barras: É o número de classes de
+frequência do histograma. O valor padrão aparece como
+zero, mas na realidade, as classes são automaticamente
+calculadas utilizando a fórmula de sturges. Se desejar definir
+outras classes, basta escrever o número nesse campo. Deve-se
+lembrar que no Epi-R, as classes são divididas igualmente.<br>
+<br>
+Cor: Indica a cor do gráfico, em código RGB. Para alterar
+a cor de um gráfico, não é necessário saber
+o código da cor. Basta dar um duplo clique no campo&nbsp;e uma
+janela
+será aberta com a aquarela. Nessa janela, selecione a cor
+desejada e clique em ok.<br>
+<br>
+Frequência: Como visto, o histograma pode ser apresentado com
+valores absolutos ou relativos. O padrão é a
+apresentação com a frequência absoluta. Se desejar
+utilizar a frequência relativa, basta desmarcar a caixa de diálogo
+desse campo.<br>
+<br>
+<span style="font-weight: bold; text-decoration: underline;"></span><span style="text-decoration: underline; font-weight: bold;"></span><span style="font-size: 11pt;"><big>Depois de selecionar todas as
+opções desejadas, basta clicar em "Executar". Para construir sucessivos
+gráficos usando essa janela, marque a opção
+"Manter essa janela aberta para outra operação". Com isso, o resultado
+desejado aparecerá na janela de gráficos do Epi-R, mas&nbsp;a janela atual
+não será fechada, evitando o retrabalho de
+acessá-la.</big></span><br><br><hr style="width: 100%; height: 2px;"><div style="text-align: center;"><a href="MenuGraphics.html">Voltar</a> &nbsp; &nbsp;| &nbsp; &nbsp;<a href="EpiR.html">Página inicial</a></div></td>
+</tr>
+
+</tbody>
+</table>
+<br style="font-family: Arial;">
+<br style="font-family: Arial;">
+</body></html>

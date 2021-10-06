@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;"><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Gráfico simples</title>
+
+<link href="conf/style.css" rel="stylesheet" type="text/css"></head>
+<body style="direction: ltr;">
+<table style="text-align: left; width: 100%; font-family: Arial;" border="0" cellpadding="2" cellspacing="4">
+<tbody>
+<tr>
+<td>
+<h2 style="color: rgb(0, 0, 153);"><img style="width: 48px; height: 48px;" alt="" src="images/EpiR_icon.png"> Gráfico
+simples</h2>
+<hr style="width: 100%; height: 2px;"></td>
+</tr>
+<tr>
+<td>O gráfico simples é indicado nos casos onde se
+deseja observar o comportamento de apenas uma variável. Em geral<span style="font-size: 11pt;">,
+transmite uma idéia de continuidade. Pode ser usado por
+exemplo,&nbsp;para acompanhar o número de
+nascimentos para um determinado estado, por ano, entre 1997 e 2007.<br>
+<br>
+Além disso, na presença de uma variável de
+estratificação, o gráfico poderá mostrar
+relações de tendência entre a variável e os
+grupos.<br>
+<br>
+O caminho para acessar essa janela é:&nbsp;<a href="MenuGraphics.html">Gráficos</a> <img style="width: 28px; height: 15px;" alt="" src="images/arrow.png"> Gráfico simples.<br>
+<br>
+</span></td>
+</tr>
+<tr>
+<td>
+<div style="text-align: center;"><img style="width: 443px; height: 456px;" alt="" src="images/PlotsX.png"><br>
+<small>Figura 1. Janela
+"Gráfico simples".</small><br>
+</div>
+</td>
+</tr>
+<tr>
+<td><br>
+O primeiro passo é selecionar o banco de dados onde está
+a variável de interesse. Para isso, é
+necessário que o banco já tenha sido aberto&nbsp;(detalhes
+sobre como <a href="ImportData.html"><span style="text-decoration: underline;">abrir dados</span></a>
+ou <a href="ODBCConnect.html">importar dados via ODBC</a>).<br>
+<br>
+Em seguida, todas as variáveis&nbsp;aparecerão
+disponíveis no campo "Eixo Y". Uma ou mais variáveis deverão ser
+selecionadas.<br>
+<br>
+Um item opcional da janela é a variável de
+estratificação. Quando o banco de dados é
+selecionado, as variáveis identificadas como fatores
+aparecerão na guia
+"Estratificação". Se a variável de estratificação
+não estiver listada nesse campo, basta habilitar a
+opção "Mostrar todas as variáveis". É
+permitida a
+escolha de apenas
+uma variável para esse caso.&nbsp;<br>
+<br>
+O próximo passo é escolher a variável para o "Eixo
+X". Por ser um gráfico que representa a idéia de
+continuidade, as variáveis mais indicadas para essa categoria
+são índices de tempo ou do banco de dados. É
+importante lembrar que sem a especificação do Eixo X, o
+gráfico não será concluído.<br>
+<br>
+Os campos seguintes são opcionais. As informações sobre cada campo
+seguem abaixo:<br>
+<br>
+<span style="font-weight: bold; text-decoration: underline;">Opções
+de títulos </span><br>
+As opções de "Título", "Subtítulo",
+"Rótulo X" e "Rótulo Y" não aparecem na janela
+automaticamente. Para preenche-las, clique primeiro em <span style="font-weight: bold;">Títulos</span>. <br>
+Os nomes dos rótulos devem se referir às variáveis que foram
+selecionadas para o eixo correspondente.<br>
+<br>
+<span style="font-weight: bold; text-decoration: underline;">Tracejados
+do gráfico</span><br>
+Tipo: tipo de gráfico, que pode ser ponto, linha, ponto e linha,
+histograma e degrau. O gráfico do tipo degrau deve ser mais
+utilizado quando se deseja observar uma função acumulada.<br>
+<br>
+Linha: Para gráficos de linha, é possível
+especificar o tipo de linha, como sólida, tracejada ou
+pontilhada.<br>
+<br>
+Ponto: Para essa versão, essa opçõa ainda
+não está disponível mas seu objetivo será a
+escolha de diferentes tipos de pontos.<br>
+<br>
+Tamanho: Se refere a espessura da linha ou ao tamanho do ponto,
+dependendo do tipo de gráfico. Pode variar entre 1 e 10.<br>
+<br>
+Sobrepor: Essa opção deve ser utilizada quando&nbsp;mais
+de uma variável tiver sido selecionada para a
+construção do gráfico. Para criar dois ou mais
+gráficos diferentes, dentro da mesma janela, clique em "Nenhum".
+Se desejar sobrepor as variáveis em um mesmo gráfico,
+clique em "Variáveis".<br>
+<br>
+Linha horizontal: Adiciona uma linha horizontal no gráfico. Em
+geral, é usada quando se deseja as informações do
+gráfico com um determinado valor. Para isso, basta digitar o
+valor nesse campo.<br>
+<br>
+Cor da linha: Se refere a cor da linha horizontal que pode ser
+adicionada. A cor padrão é sempre preta, podendo ser
+alterada pelo usuário. Para isso, basta dar um duplo clique na
+linha e selecionar a cor desejada.<br>
+<br>
+Cor: Indica a cor do gráfico, em código RGB. Para alterar
+a cor de um gráfico, não é necessário saber
+o código da cor. Basta dar um duplo clique na cor que uma janela
+será aberta com a aquarela. Nessa janela, selecione a cor
+desejada e clique em ok.<br>
+<br>
+<span style="text-decoration: underline; font-weight: bold;">Opções
+de legenda</span><br>
+Se desejar incluir uma legenda ao gráfico, habilite a caixa
+"Legenda". Novamente, essas opções não aparecem
+automaticamente. Para preenche-las, clique primeiro em <span style="font-weight: bold;">Legenda</span>.<br>
+Para legendas na horizontal, habilite a caixa "Horizontal". Se desejar
+legendas na vertical, não é necessário marcar por
+ser o default do aplicativo.<br>
+A opção "posição" deve ser preenchida com a localização da legenda no
+gráfico.<br>
+<br><span style="font-size: 11pt;"><big>Depois de selecionar todas as
+opções desejadas, basta clicar em "Executar". Para construir sucessivos
+gráficos usando essa janela, marque a opção
+"Manter essa janela aberta para outra operação". Com isso, o resultado
+desejado aparecerá na janela de gráficos do Epi-R, mas&nbsp;a janela atual
+não será fechada, evitando o retrabalho de
+acessá-la.</big></span><br><br><hr style="width: 100%; height: 2px;"><div style="text-align: center;"><a href="MenuGraphics.html">Voltar</a> &nbsp; &nbsp;| &nbsp; &nbsp;<a href="EpiR.html">Página inicial</a>
+</div></td>
+</tr>
+
+</tbody>
+</table>
+<br style="font-family: Arial;">
+<br style="font-family: Arial;">
+</body></html>
