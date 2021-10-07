@@ -64,10 +64,11 @@ remotes::install_github("NPEA/EpiR")
 library(EpiR)
 ```
 
-
-
-
 Acesse a [página do pacote remotes](https://github.com/r-lib/remotes) para mais informações sobre como instalar pacotes do GitHub no R.
+
+## Aviso
+
+No Windows, alguns caracteres poderão ser exibidos com erro. Este bug será corrigido em breve.
 
 
 ## Licença
