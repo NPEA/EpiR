@@ -66,7 +66,9 @@ library(EpiR)
 
 Acesse a [página do pacote remotes](https://github.com/r-lib/remotes) para mais informações sobre como instalar pacotes do GitHub no R.
 
-## Aviso
+## Notas
+
+O repositório [NPEA/EpiR](https://github.com/NPEA/EpiR) é uma bifurcação (fork) atualizada pronta para uso. Entretanto, se você pretende bifurcar o projeto use o repositório original [wjunger/EpiR](https://github.com/wjunger/EpiR).
 
 No Windows, alguns caracteres poderão ser exibidos com erro. Este bug será corrigido em breve.
 
