@@ -10,39 +10,40 @@ O Epi-R é desenvolvido totalmente em R e a interface gráfica em GTk2.
 
 ## Instalação
 
-Para instalar o R no Windows acesse este [link](https://cloud.r-project.org/).
 
 ### Windows
 
+Para instalar o R no Windows acesse este [link](https://cloud.r-project.org/bin/windows/).
 
 
 ### Linux
 
 Estas instruções são para o Ubuntu 20.04 e outras distribuições derivadas.
+Para instalar o R no Linux acesse este [link](https://cloud.r-project.org/bin/linux/).
 
 Antes de instalar o Epi-R no Linux é necessário instalar os arquivos de desenvolvimento das bibliotecas utilizadas pelos pacotes do R. Certifique-se que o pacote r-base-dev esteja instalado.
 
 No terminal do Linux, execute os seguiinte comando
-```r
+```sh
 sudo apt install r-base-dev libmysqlclient-dev libcurl4-openssl-dev libxml2-dev unixodbc-dev libcairo2-dev libxt-dev libgtk2.0-dev
 
 ```
 
 ### MacOS
+Para instalar o R no MacOS acesse este [link](https://cloud.r-project.org/bin/macosx/).
 
-Este programa não foi testado no sistema operacional Mac OS.
+Este programa não foi testado no sistema operacional MacOS.
 
 
 ### Etapas comuns
 
-Instale as dependẽncias
+Instale as dependências
 
 ```r
-install.packages(c("boot","bitops","caTools","RGtk2","cairoDevice","foreign","lattice","DBI","RODBC","RSQLite","zoo","lmtest","akima","gam","gtools","gdata","gplots"), dep=TRUE)
+install.packages(c("boot","bitops","caTools","RGtk2","cairoDevice","foreign","lattice","DBI","RODBC","RSQLite","zoo","lmtest","akima","gam","gtools","gdata","gplots","remotes"), dep=TRUE)
 ```
 e instale o Epi-R
 ```r
-install.packages("remotes")
 remotes::install_github("wjunger/EpiR")
 library(EpiR)
 ```
@@ -50,7 +51,6 @@ library(EpiR)
 ou
 
 ```r
-install.packages("remotes")
 remotes::install_github("NPEA/EpiR")
 library(EpiR)
 ```
