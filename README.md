@@ -15,6 +15,8 @@ O Epi-R é desenvolvido totalmente em R e a interface gráfica em GTk2.
 
 Para instalar o R no Windows acesse este [link](https://cloud.r-project.org/bin/windows/).
 
+Instale [Rtools 4.0](https://cran.r-project.org/bin/windows/Rtools/).
+
 
 ### Linux
 
@@ -42,7 +44,14 @@ Instale as dependências
 ```r
 install.packages(c("boot","bitops","caTools","RGtk2","cairoDevice","foreign","lattice","DBI","RODBC","RSQLite","zoo","lmtest","akima","gam","gtools","gdata","gplots","remotes"), dep=TRUE)
 ```
-e instale o Epi-R
+No Windows, antes de instalar o Epi-R, digite
+```r
+library(RGtk2)
+```
+e clique em "Instalar GTk+" para instalar a bilbioteca GTk2.
+
+Instale o Epi-R
+
 ```r
 remotes::install_github("wjunger/EpiR")
 library(EpiR)
@@ -55,7 +64,7 @@ remotes::install_github("NPEA/EpiR")
 library(EpiR)
 ```
 
-No Windows, ao executar o EpiR pela primeira vez, clique em "sim" para instalar a bilbioteca GTk2.
+
 
 
 Acesse a [página do pacote remotes](https://github.com/r-lib/remotes) para mais informações sobre como instalar pacotes do GitHub no R.
