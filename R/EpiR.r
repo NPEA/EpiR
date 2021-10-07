@@ -10,11 +10,11 @@ if(gui)
     installed <-  required[!(required %in% installed.packages())]
 	if(length(installed) != 0)
 		{
-		if(askDialog(NULL,"Alguns pacotes de dependência do R não estão disponíveis. Eles são necessários para o funcionamento do Epi-R. \nDeseja instalá-los agora?") == "yes")
+		if(askDialog(NULL,"Alguns pacotes de dependÃªncia do R nÃ£o estÃ£o disponÃ­veis. Eles sÃ£o necessÃ¡rios para o funcionamento do Epi-R. \nDeseja instalÃ¡-los agora?") == "yes")
 			{
 			if(!checkInternet())
 				{
-				msgDialog(NULL, "error","O computador não está conectado à Internet e não será possível atualizar os pacotes.")
+				msgDialog(NULL, "error","O computador nÃ£o estÃ¡ conectado Ã  Internet e nÃ£o serÃ¡ possÃ­vel atualizar os pacotes.")
 				unload()
 				}
 			else
@@ -42,7 +42,7 @@ else
 		package.test <- FALSE
 		while(!package.test)
 			{
-			cat("Alguns pacotes de dependência do R não estão disponíveis. Eles são necessários para o funcionamento do Epi-R. \nDeseja instalá-los agora?(s/n)? \n")
+			cat("Alguns pacotes de dependÃªncia do R nÃ£o estÃ£o disponÃ­veis. Eles sÃ£o necessÃ¡rios para o funcionamento do Epi-R. \nDeseja instalÃ¡-los agora?(s/n)? \n")
 			package.test <- scan(what="character",n=1,quiet=T)
 			if(tolower(package.test) %in% c("s","n"))
 				package.test <- FALSE
@@ -51,7 +51,7 @@ else
 			{
 			if(!checkInternet())
 				{
-				cat("O computador não está conectado à Internet e não será possível atualizar os pacotes.\n")
+				cat("O computador nÃ£o estÃ¡ conectado Ã  Internet e nÃ£o serÃ¡ possÃ­vel atualizar os pacotes.\n")
 				unload()
 				}
 			else
@@ -70,7 +70,7 @@ else
 	}
 # Output status
 if(gui)
-	setLoadStatus("Definindo outras variáveis de ambiente...")
+	setLoadStatus("Definindo outras variÃ¡veis de ambiente...")
 	
 
 if(gui)
@@ -83,12 +83,12 @@ if(gui)
 	# output some some message through the status bar
 	for (i in required)
 		{
-		setLoadStatus(paste("Carregando dependência:",i))
+		setLoadStatus(paste("Carregando dependÃªncia:",i))
 		require(i,character.only=TRUE,quietly=TRUE,warn.conflicts=FALSE)
 		}
 # 	if(is.windows())
 # 		{
-# 		setLoadStatus(paste("Carregando dependência (Windows):","xlsReadWrite"))
+# 		setLoadStatus(paste("Carregando dependÃªncia (Windows):","xlsReadWrite"))
 # 		require("xlsReadWrite",character.only=TRUE,quietly=TRUE,warn.conflicts=FALSE)
 # 		}
 	}
@@ -106,7 +106,7 @@ try(setwd(get("EPIR_USER_HOME",envir.EpiREnv)),silent=TRUE)
 
 # set close button visible on the splash screen
 getWidget("SplashScreen","btn_SS_close")$setSensitive(TRUE)
-setLoadStatus("Clique no botão \'Fechar\' para continuar...")
+setLoadStatus("Clique no botÃ£o \'Fechar\' para continuar...")
 
 # return TRUE (must have some function in the future)
 return(TRUE)
@@ -122,7 +122,7 @@ if(gui)
 		{	
 		if(exists("Main",envir=.EpiREnv))
 			{
-			msgDialog(NULL,"warning","Já existe uma instância do Epi-R sendo executada.")
+			msgDialog(NULL,"warning","JÃ¡ existe uma instÃ¢ncia do Epi-R sendo executada.")
 			getWidget("Main")$present()
 			}
 		else
@@ -184,7 +184,7 @@ loadGui <- function()
 # loading main window
 setWindow("Main")
 sbaMain <- getWidget("Main","sbaMain")
-sbaMain$push(0,paste("Epi-R versão",EPIR_VER))
+sbaMain$push(0,paste("Epi-R versÃ£o",EPIR_VER))
 
 #switching things
 getWidget("Main","mnSaveData")$setSensitive(FALSE)
@@ -247,7 +247,7 @@ setTrayIcon <- function()
 {
 # Note: the callback functions are in the other_callbacks.r file
 assign("trayIcon",gtkStatusIconNewFromFile(paste(get("EPIR_GUI_DIR",envir=.EpiREnv),"/epir_icon.png",sep="")),.EpiREnv)
-get("trayIcon",envir=.EpiREnv)$setTooltip(paste("Epi-R versão",get("EPIR_VER",envir=.EpiREnv)))
+get("trayIcon",envir=.EpiREnv)$setTooltip(paste("Epi-R versÃ£o",get("EPIR_VER",envir=.EpiREnv)))
 gSignalConnect(get("trayIcon",envir=.EpiREnv),"activate",on_trayIcon_activate)
 }
 
