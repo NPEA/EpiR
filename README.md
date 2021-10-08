@@ -76,5 +76,5 @@ No Windows, alguns caracteres poderão ser exibidos com erro. Este bug será cor
 ## Licença
 Este software é distribuído sob a licensa GPL 2 ou superior.
 
-Epi-R é um software livre e vem sem GARANTIA ALGUMA.
-Você pode redistribuí-lo sob certas circunstâncias.
+Epi-R é um software livre e vem com NENHUMA GARANTIA.
+Você pode redistribuí-lo sob certas circunstâncias. Consulte [aqui](https://www.gnu.org/licenses/gpl-3.0.html) os termos da licença.
